@@ -45,3 +45,7 @@ Type help for instructions on how to use fish
 ## History
 
 This approach for Bash environment support for non-POSIX shells was pioneered in [bash-env-nushell](https://github.com/tesujimath/bash-env-nushell) for [Nushell](https://www.nushell.sh/).  The Bash backend was extracted as the common dependency [bash-env-json](https://github.com/tesujimath/bash-env-json) when adding similar support in [bash-env-elvish](https://github.com/tesujimath/bash-env-elvish) for [Elvish](https://elv.sh/).  And now for Fish.
+
+## Alternatives
+
+- [Bass](https://github.com/edc/bass)
