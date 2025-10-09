@@ -1,7 +1,7 @@
 # bash-env-fish
 
-- importing Bash environment into Fish shell
-- extracting Bash style shell variables from source files like `/etc/os-release`
+- import Bash environment into Fish shell
+- extract Bash style shell variables from source files like `/etc/os-release`
 
 ## Installation
 
@@ -9,7 +9,7 @@ May be installed from this repo using [Fisher](https://github.com/jorgebucaran/f
 
 ### Dependencies
 
-The heavy lifting is done by [bash-env-json](https://github.com/tesujimath/bash-env-json), which must be separately installed and added to the path.
+The heavy lifting is done by [bash-env-json](https://github.com/tesujimath/bash-env-json) which must be separately installed and added to the path.
 
 ## Example Usage
 
@@ -41,3 +41,7 @@ Type help for instructions on how to use fish
 > echo $PRETTY_NAME
 <no output>
 ```
+
+## History
+
+This approach for Bash environment support for non-POSIX shells was pioneered in [bash-env-nushell](https://github.com/tesujimath/bash-env-nushell) for [Nushell](https://www.nushell.sh/).  The Bash backend was extracted as the common dependency [bash-env-json](https://github.com/tesujimath/bash-env-json) when adding similar support in [bash-env-elvish](https://github.com/tesujimath/bash-env-elvish) for [Elvish](https://elv.sh/).  And now for Fish.
