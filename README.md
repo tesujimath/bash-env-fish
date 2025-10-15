@@ -49,3 +49,7 @@ This approach for Bash environment support for non-POSIX shells was pioneered in
 ## Alternatives
 
 - [Bass](https://github.com/edc/bass)
+
+## See also
+
+- [lmod-fish](https://github.com/tesujimath/lmod-fish)
