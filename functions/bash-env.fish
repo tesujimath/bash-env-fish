@@ -1,18 +1,15 @@
 function bash-env
     # alas this pollutes the environment
     function __bash-env-from-json
-        python -c '
-import sys, json
-d = json.load(sys.stdin)
-def escape(s):
-    """Escape backslashes and single quotes."""
-    return s.replace("\\\\", "\\\\\\\\").replace("\'", "\\\\\'")
-
-print(";".join(
-  [f"set -gx {k} \'{escape(v)}\'" for (k,v) in d["env"].items() if v is not None] +
-  [f"set -e {k}" for (k,v) in d["env"].items() if v is None] +
-  [f"set -g {k} \'{escape(v)}\'" for (k,v) in d["shellvars"].items()]))
-'
+        jq -r '
+            (.env // {} | to_entries[]
+                | if .value == null
+                  then "set -e \\(.key);"
+                  else "set -gx \\(.key) \\(.value | @sh);"
+                  end),
+            (.shellvars // {} | to_entries[]
+                | "set -g \\(.key) \\(.value | @sh);")
+            '
     end
 
     if test (count $argv) -gt 0

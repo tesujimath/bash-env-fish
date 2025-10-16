@@ -11,6 +11,10 @@ May be installed from this repo using [Fisher](https://github.com/jorgebucaran/f
 
 The heavy lifting is done by [bash-env-json](https://github.com/tesujimath/bash-env-json) which must be separately installed and added to the path.
 
+Notwithstanding the [recommendation](https://fishshell.com/docs/current/contributing.html) to use Python rather than `jq` for reading JSON in completion scripts, `bash-env-fish` does in fact use [jq](https://jqlang.org/) simply because it is so much lighter than Python.  With apologies to the Fish developers.
+
+(Note that `jq` is also a dependency of `bash-env-json`, so this is not imposing further burden.)
+
 ## Example Usage
 
 ```
