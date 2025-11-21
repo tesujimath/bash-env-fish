@@ -53,6 +53,7 @@ This approach for Bash environment support for non-POSIX shells was pioneered in
 ## Alternatives
 
 - [Bass](https://github.com/edc/bass)
+- [plugin-foreign-env](https://github.com/oh-my-fish/plugin-foreign-env)
 
 ## See also
 
